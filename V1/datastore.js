@@ -1,30 +1,47 @@
-export class DataStore {
-  async save(){ /* V1: no auto-persist */ }
-  async load(){ return null; }
+const LS_PREFIX = "DLV1:";
 
-  async exportFile(data){
-    const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
-    const url = URL.createObjectURL(blob);
-    const a = Object.assign(document.createElement("a"), { href: url, download: "debug-legends-save.json" });
-    document.body.appendChild(a); a.click(); a.remove();
-    URL.revokeObjectURL(url);
-  }
-
-  async importFile(file){
-    const raw = await file.text();
-    return JSON.parse(raw);
-  }
+export function defaultSave(){
+  return {
+    meta: { version: 1, introSeen:false, by:"Camcookie" },
+    player: {
+      name: "Apprentice",
+      style: { primary:"#66e9ff", secondary:"#8b7dff", skin:"#f2c7a5" },
+    },
+    progress: {
+      world: { nodesCleared: [] },
+    }
+  };
 }
 
-export function defaultSave() {
-  const now = new Date().toISOString();
-  return {
-    version: 1,
-    profile: { playerId: "V1-offline", displayName: "Code Warden", createdAt: now, lastSeenAt: now },
-    progress: { chaptersUnlocked: ["CPU","GPU"], lastCheckpoint: null, bossesDefeated: [] },
-    inventory: { chips: ["debug-blade"], fragments: 0, keys: [] },
-    settings: { difficulty: "standard", accessibility: { highContrast: false, textScale: 1.0 }, audio: { music: 0.6, sfx: 0.9 } },
-    telemetry: { playtimeSeconds: 0, puzzlesSolved: 0 },
-    integrity: { lastWriteAt: now, checksum: "init" }
-  };
+export class DataStore{
+  constructor(key){
+    this.key = `${LS_PREFIX}${key}`;
+  }
+  async load(){
+    try{
+      const raw = localStorage.getItem(this.key);
+      return raw ? JSON.parse(raw) : null;
+    }catch(e){ console.warn("Load failed", e); return null; }
+  }
+  async save(data){
+    try{
+      localStorage.setItem(this.key, JSON.stringify(data));
+      return true;
+    }catch(e){ console.warn("Save failed", e); return false; }
+  }
+  async exportJSON(){
+    const raw = localStorage.getItem(this.key) ?? JSON.stringify(defaultSave());
+    return raw;
+  }
+  async importJSON(raw){
+    const parsed = JSON.parse(raw);
+    if(!parsed?.meta || !parsed?.player) throw new Error("Invalid save file.");
+    await this.save(parsed);
+    return parsed;
+  }
+  async reset(){
+    const d = defaultSave();
+    await this.save(d);
+    return d;
+  }
 }

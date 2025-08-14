@@ -1,33 +1,29 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Debug Legends: The Silicon Siege — Pre‑Release (V1)</title>
-  <meta name="description" content="Pre-release V1 of Debug Legends — learn by fixing real code to heal a corrupted silicon world." />
-  <link rel="icon" href="assets/favicon.svg" />
-  <link rel="stylesheet" href="styles.css" />
-  <meta name="theme-color" content="#10151f" />
-</head>
-<body>
-  <noscript>This game needs JavaScript enabled.</noscript>
+  <head>
+    <meta charset="utf-8" />
+    <title>Debug Legends V1 — By Camcookie</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b1226" />
+    <meta name="description" content="Enter the coding world. Learn by adventuring. By Camcookie." />
 
-  <header class="banner">
-    <img class="poster" src="assets/poster.svg" alt="Debug Legends — The Silicon Siege (Pre‑Release)" />
-    <nav class="top-nav">
-      <button data-route="home" class="nav-btn is-active">Home</button>
-      <button data-route="play" class="nav-btn">Play</button>
-      <button data-route="save" class="nav-btn">Save/Load</button>
-    </nav>
-  </header>
+    <link rel="preload" as="image" href="https://camcookie876.github.io/DEBUG-LEGENDS/V1/assets/svg/bg-grid.svg" />
+    <link rel="stylesheet" href="https://camcookie876.github.io/DEBUG-LEGENDS/V1/style.css" />
 
-  <main id="app" class="container" role="main" aria-live="polite"></main>
+    <link rel="icon" href="https://camcookie876.github.io/DEBUG-LEGENDS/V1/assets/svg/logo.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <noscript>
+      <div class="noscript">
+        JavaScript is required to play Debug Legends.
+      </div>
+    </noscript>
 
-  <footer class="site-footer">
-    <span>V1 Pre‑Release • Debug Legends</span>
-    <span>© 2025 Camden Cooke</span>
-  </footer>
+    <div id="app"></div>
+    <div id="overlay-root"></div>
+    <div id="modal-root"></div>
+    <div id="toast-root"></div>
 
-  <script type="module" src="app.js"></script>
-</body>
+    <script type="module" src="https://camcookie876.github.io/DEBUG-LEGENDS/V1/app.js"></script>
+  </body>
 </html>
