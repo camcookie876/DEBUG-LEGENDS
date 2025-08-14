@@ -16,7 +16,7 @@ You are the Code Warden, armed with the Debug Blade: code you write becomes the 
 ---
 
 ## 🌐 Web Edition: Browser Realms
-For HTML/CSS/SVG learners, the *Browser Realms* edition launches alongside the main series — playable directly on [Camcookie876’s GitHub Pages](#).
+For HTML/CSS/SVG learners, the *Browser Realms* edition launches alongside the main series — playable directly on [Camcookie876’s GitHub Pages](https://camcookie876.github.io/DEDBUG-LEDGENDS).
 
 ---
 
