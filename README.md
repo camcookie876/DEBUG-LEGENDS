@@ -1,4 +1,4 @@
-![Debug Legends Poster](https://camcookie876.github.io/DEBUG-LEGENDS/game-poster.jpg)
+![Debug Legends Poster](https://camcookie876.github.io/DEBUG-LEGENDS/game-poster.png)
 
 # Debug Legends: The Silicon Siege — Pre‑Release
 
