@@ -27,6 +27,11 @@ For HTML/CSS/SVG learners, the *Browser Realms* edition launches alongside the m
 
 ---
 
+**Dedication**  
+This project is lovingly created for the students, staff, and community of **Bow Memorial School**, New Hampshire, USA.
+
+---
+
 ## 🛠 About the Dev
 Developed by **Camden Cooke** — combining engineering precision with epic storytelling to create a learning‑through‑adventure experience.
 
