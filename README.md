@@ -1,3 +1,5 @@
+![Debug Legends Poster](https://camcookie876.github.io/DEBUG-LEGENDS/game-poster.jpg)
+
 # Debug Legends: The Silicon Siege — Pre‑Release
 
 **A new era of coding adventures begins.**
